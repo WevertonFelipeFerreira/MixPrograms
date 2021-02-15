@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace MixPrograms.Modelos.Calculadora
 {
+    /// <summary>
+    /// Usado para criar uma calculadora.
+    /// </summary>
     public class Calculadora
     {
+
         private int _valor1 { get; set; }
         private int _valor2 { get; set; }
         private int _operador { get; set; }
-        private int _resultadoSoma { get; set; }
-        private int _resultadoSub { get; set; }
-        private int _resultadoMult { get; set; }
-        private int _resultadoDiv { get; set; }
-        private int _resultadoPot { get; set; }
+        private int _resultado { get; set; }
+        /// <summary>
+        /// Método Essencial para execução da calculadora.
+        /// </summary>
         public void Inicio()
         {
             Console.WriteLine("Calculadora");
@@ -29,23 +32,24 @@ namespace MixPrograms.Modelos.Calculadora
             _operador = Convert.ToInt32(leitor);
             if (_operador > 6 || _operador < 1)
             {
-                Console.WriteLine("O valor digitado esta incorreto!");
                 Console.Clear();
                 Inicio();
             }
-
-            if (_operador == 1)
-          { Console.Clear(); Soma(); }
-             else if (_operador == 2)
-             { Console.Clear(); Subtracao(); }
-             else if (_operador == 3)
-             { Console.Clear(); Multiplicacao(); }
-             else if (_operador == 4)
-             { Console.Clear(); Divisao(); }
-             else if (_operador == 5)
-             { Console.Clear(); Potencia(); }
-             else if (_operador == 6)
-             { Console.Clear(); Console.WriteLine("Obrigado por utilizar nosso sistema"); Console.ReadLine(); }
+            switch (_operador) 
+            {
+                case 1:
+                    Console.Clear(); Soma();break;
+                case 2:
+                    Console.Clear(); Subtracao(); break;
+                case 3:
+                    Console.Clear(); Multiplicacao(); break;
+                case 4:
+                    Console.Clear(); Divisao(); break;
+                case 5:
+                    Console.Clear(); Potencia(); break;
+                case 6:
+                    Console.Clear(); Console.WriteLine("Obrigado por utilizar nosso sistema"); Console.ReadLine();break;
+            }
         }
         private void GetValores() 
         {
@@ -70,36 +74,33 @@ namespace MixPrograms.Modelos.Calculadora
             else if (leitor == "n") { Console.Clear(); Console.WriteLine("Obrigado por utilizar nosso sistema");}
 
         }
+        /// <summary>
+        /// Utilizado para realizar o caluclo.
+        /// </summary>
+        /// <param name="Valor1">Recebe o primeiro valor de <see cref="_valor1"/></param>
+        /// <param name="Valor2">Recebe o segundo valor de <see cref="_valor2"/></param>
         private void Calculo(int Valor1,int Valor2) 
         {
-            if (_operador == 1)
+            switch (_operador) 
             {
-                _resultadoSoma = Valor1 + Valor2;
+                case 1:
+                    _resultado = Valor1 + Valor2;break;
+                case 2:
+                    _resultado = Valor1 - Valor2;break;
+                case 3:
+                    _resultado = Valor1 * Valor2; break;
+                case 4:
+                    _resultado = Valor1 / Valor2;break;
+                case 5:
+                    _resultado = (int)Math.Pow(Valor2, Valor2); break;
             }
-            else if (_operador == 2)
-            {
-                _resultadoSub = Valor1 - Valor2;
-            }
-            else if (_operador == 3)
-            {
-                _resultadoMult = Valor1 * Valor2;
-            }
-            else if (_operador == 4)
-            {
-                _resultadoDiv = Valor1 / Valor2;
-            }
-            else if (_operador == 5)
-            {
-                _resultadoPot = (int)Math.Pow(Valor2,Valor2);
-            }
-
-        }
+         }
         private void Soma()
         {
             Console.WriteLine("A Soma foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " + " + _valor2 + " = " + _resultadoSoma);
+            Console.WriteLine(_valor1 + " + " + _valor2 + " = " + _resultado);
             Continuar();
         }
         private void Subtracao()
@@ -107,7 +108,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Subtração foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " - " + _valor2 + " = " + _resultadoSub);
+            Console.WriteLine(_valor1 + " - " + _valor2 + " = " + _resultado);
             Continuar();
         }
         private void Multiplicacao()
@@ -115,7 +116,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Multiplicãção foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " * " + _valor2 + " = " + _resultadoMult);
+            Console.WriteLine(_valor1 + " * " + _valor2 + " = " + _resultado);
             Continuar();
         }
         private void Divisao()
@@ -123,7 +124,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Divisão foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " / " + _valor2 + " = " + _resultadoDiv);
+            Console.WriteLine(_valor1 + " / " + _valor2 + " = " + _resultado);
             Continuar();
         }
         private void Potencia()
@@ -131,7 +132,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Divisão foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " Elevado a " + _valor2 + " = " + _resultadoPot);
+            Console.WriteLine(_valor1 + " Elevado a " + _valor2 + " = " + _resultado);
             Continuar();
         }
 

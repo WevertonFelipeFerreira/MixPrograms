@@ -1,6 +1,7 @@
 ﻿using System;
 using MixPrograms.Modelos;
 using MixPrograms.Modelos.Calculadora;
+using MixPrograms.Modelos.Conversor;
 
 namespace MixPrograms
 {
@@ -8,9 +9,9 @@ namespace MixPrograms
     {
         static void Main(string[] args)
         {
-            Calculadora calculadora = new Calculadora();
-            calculadora.Inicio();
-
+           Conversor conversor = new Conversor();
+           conversor.Inicio();
+        
             Console.ReadLine();
         }
         public static int Fatorial(int x)
