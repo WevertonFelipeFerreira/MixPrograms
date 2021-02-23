@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscaERecur\BuscaERecursividade.cs" />
     <Compile Include="Calculadora\Calculadora.cs" />
     <Compile Include="Conversor\Conversor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

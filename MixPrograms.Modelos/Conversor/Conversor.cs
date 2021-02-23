@@ -21,7 +21,7 @@ namespace MixPrograms.Modelos.Conversor
             Console.WriteLine("(2) Fahrenheit para Celsius");
             string leitor = Console.ReadLine();
             _operador = Convert.ToInt32(leitor);
-            if (_operador > 6 || _operador < 1)
+            if (_operador > 2 || _operador < 1)
             {
                 Console.Clear();
                 Inicio();

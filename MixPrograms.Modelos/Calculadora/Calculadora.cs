@@ -10,8 +10,7 @@ namespace MixPrograms.Modelos.Calculadora
     /// Usado para criar uma calculadora.
     /// </summary>
     public class Calculadora
-    {
-
+    {     
         private int _valor1 { get; set; }
         private int _valor2 { get; set; }
         private int _operador { get; set; }
@@ -129,7 +128,7 @@ namespace MixPrograms.Modelos.Calculadora
         }
         private void Potencia()
         {
-            Console.WriteLine("A Divisão foi escolhida");
+            Console.WriteLine("A Potência foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
             Console.WriteLine(_valor1 + " Elevado a " + _valor2 + " = " + _resultado);
