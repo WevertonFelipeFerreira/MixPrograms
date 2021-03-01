@@ -11,10 +11,9 @@ namespace MixPrograms
     {
         static void Main(string[] args)
         {
-            
-
-
-            Console.ReadLine();
+            Conversor con = new Conversor();
+            con.Inicio();
+           Console.ReadLine();
         }
     }
 }

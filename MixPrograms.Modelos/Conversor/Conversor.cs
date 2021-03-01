@@ -68,7 +68,7 @@ namespace MixPrograms.Modelos.Conversor
             Console.WriteLine("Celsius para Fahrenheit foi escolhido.");
             GetValorTemperatura();
             CalculoTemperatura(_valor1);
-            Console.WriteLine(_valor1+"°C = "+_resultado+"F");
+            Console.WriteLine("{0}°c = {1}F",_valor1,_resultado);
             Continuar();
         }
         private void FahrenheitToCelsius()
@@ -76,7 +76,7 @@ namespace MixPrograms.Modelos.Conversor
             Console.WriteLine("Fahrenheit para Celsius foi escolhido.");
             GetValorTemperatura();
             CalculoTemperatura(_valor1);
-            Console.WriteLine(_valor1 + "F = " + _resultado + "°C");
+            Console.WriteLine("{0}F = {1}°c", _valor1, _resultado);
             Continuar();
         }
     }

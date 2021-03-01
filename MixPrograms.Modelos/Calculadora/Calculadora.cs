@@ -91,7 +91,7 @@ namespace MixPrograms.Modelos.Calculadora
                 case 4:
                     _resultado = Valor1 / Valor2;break;
                 case 5:
-                    _resultado = (int)Math.Pow(Valor2, Valor2); break;
+                    _resultado = PotenciaRecursiva(Valor1,Valor2); break;
             }
          }
         private void Soma()
@@ -99,7 +99,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Soma foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " + " + _valor2 + " = " + _resultado);
+            Console.WriteLine("{0} + {1} = {2}",_valor1,_valor2,_resultado);
             Continuar();
         }
         private void Subtracao()
@@ -107,7 +107,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Subtração foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " - " + _valor2 + " = " + _resultado);
+            Console.WriteLine("{0} - {1} = {2}", _valor1, _valor2, _resultado);
             Continuar();
         }
         private void Multiplicacao()
@@ -115,7 +115,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Multiplicãção foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " * " + _valor2 + " = " + _resultado);
+            Console.WriteLine("{0} * {1} = {2}", _valor1, _valor2, _resultado);
             Continuar();
         }
         private void Divisao()
@@ -123,7 +123,7 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Divisão foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " / " + _valor2 + " = " + _resultado);
+            Console.WriteLine("{0} / {1} = {2}", _valor1, _valor2, _resultado);
             Continuar();
         }
         private void Potencia()
@@ -131,9 +131,19 @@ namespace MixPrograms.Modelos.Calculadora
             Console.WriteLine("A Potência foi escolhida");
             GetValores();
             Calculo(_valor1, _valor2);
-            Console.WriteLine(_valor1 + " Elevado a " + _valor2 + " = " + _resultado);
+            Console.WriteLine("{0} elevado a {1} = {2}", _valor1, _valor2, _resultado);
             Continuar();
         }
-
+        private int PotenciaRecursiva(int bas, int esp) 
+        {
+            if (esp == 0)
+            {
+                return 1;
+            }
+            else 
+            {
+                return bas * PotenciaRecursiva(bas, esp - 1);
+            }
+        }
     }
 }
